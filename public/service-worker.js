@@ -10,6 +10,7 @@ const FILES_TO_CACHE = [
   '/assets/css/styles.css',
   '/assets/js/index.js',
   '/assets/js/idb.js',
+  'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
   '/assets/images/icons/icon-72x72.png',
   '/assets/images/icons/icon-96x96.png',
   '/assets/images/icons/icon-128x128.png',
@@ -79,17 +80,19 @@ self.addEventListener('fetch', function(evt) {
     }
   
     evt.respondWith(
-      fetch(evt.request).catch(function() {
-        return caches.match(evt.request).then(function(response) {
-          if (response) {
-            return response;
-          } else if (evt.request.headers.get('accept').includes('text/html')) {
-            // return the cached home page for all requests for html pages
-            return caches.match('/');
-          }
-        });
-      })
-    );
-  });
+        fetch(evt.request).catch(function() {
+          return caches.match(evt.request).then(function(response) {
+            if (response) {
+              return response;
+            } else if (evt.request.headers.get('accept').includes('text/html')) {
+              // return the cached home page for all requests for html pages
+              return caches.match('/');
+            }
+          });
+        })
+      );
+    });
+    
+     
   
   
