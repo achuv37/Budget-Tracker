@@ -16,7 +16,7 @@ This challenge is to update an existing budget tracker application to allow for 
 ## Website 
 https://floating-ocean-64578.herokuapp.com/
 
-##Images
+## Images
 ![Budget](https://user-images.githubusercontent.com/93412486/175376619-89e62140-fd5a-4379-a519-03e84cb69ab5.PNG)
 
 ## Contributed by
